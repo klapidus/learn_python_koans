@@ -22,7 +22,7 @@ def test_for_loop():
     str1 = "Python"
 
     for letter in str1[2]:
-        assert letter == ___
+        assert letter == 't'
 
 
 def test_for_loop_with_list():
@@ -37,7 +37,7 @@ def test_for_loop_with_list():
     list1 = [5]
 
     for number in list1:
-        assert number == ___
+        assert number == 5
 
 
 def test_for_loop_with_range():
@@ -50,7 +50,7 @@ def test_for_loop_with_range():
     for i in range(3):
         sum = sum + i
 
-    assert sum == ___
+    assert sum == 3
 
 
 def test_for_loop_with_specified_range():
@@ -64,7 +64,7 @@ def test_for_loop_with_specified_range():
     for i in range(2, 5):
         sum = sum + i
 
-    assert sum == ___
+    assert sum == 9
 
 
 def test_for_loop_with_step_range():
@@ -79,7 +79,7 @@ def test_for_loop_with_step_range():
     for i in range(3, 12, 3):
         sum = sum + i
 
-    assert sum == ___
+    assert sum == (3+6+9)
 
 
 def test_for_loop_with_break():
@@ -93,7 +93,7 @@ def test_for_loop_with_break():
             break
         sum = sum + i
 
-    assert sum == ___
+    assert sum == 0
 
 def test_for_loop_with_continue():
     """
@@ -107,7 +107,7 @@ def test_for_loop_with_continue():
             continue
         sum = sum + i
 
-    assert sum == ___
+    assert sum == (3+4+6)
 
 def test_for_loop_with_enumerate():
     """
@@ -123,8 +123,10 @@ def test_for_loop_with_enumerate():
     """
 
     list1 = ['Python']
+    i = 0
     for index, element in enumerate(list1):
-        assert index == ___, element == ____
+        assert index == i, element == list1[i]
+        i+=1
 
 
 def test_for_loop_with_enumerate_start():
@@ -135,5 +137,7 @@ def test_for_loop_with_enumerate_start():
     """
 
     list1 = ['Python']
+    i = 1
     for index, element in enumerate(list1, start=1):
-        assert index == ___, element == ____
+        assert index == i, element == list1[i]
+        i+=1

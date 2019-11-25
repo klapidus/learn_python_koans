@@ -12,15 +12,17 @@ def test_create_dictionary_with_literal():
         'a': 1,
         'b': 2
     }
-    assert dict_comparator(d, _____) # попробуйте подстваить объект вида {key1: value1, key2: value2,...}
+    assert dict_comparator(d, {'a': 1, 'b': 2}) # попробуйте подстваить объект вида {key1: value1, key2: value2,...}
 
 
 def test_create_dictionary_with_constructor():
     """
         Словарь в Python можно создать с помощью конструктора словаря
     """
+    a = 'a'
+    b = 'b'
     d = dict(a=1, b=2)
-    assert dict_comparator(d, _____)
+    assert dict_comparator(d, {'a': 1, 'b': 2})
 
 
 def test_create_dictionary_with_list_of_tuples():
@@ -30,7 +32,7 @@ def test_create_dictionary_with_list_of_tuples():
     list_of_tuples = [('a', 1), ('b', 2), ('c', 3)]
     d = dict(list_of_tuples)
 
-    assert dict_comparator(d, _____)
+    assert dict_comparator(d, {'a': 1, 'b': 2, 'c': 3})
 
 
 def test_get_value_by_key():
@@ -41,7 +43,7 @@ def test_get_value_by_key():
         'a': 1,
         'b': 2
     }
-    assert d['a'] == _____  # попробуйте такие варианты: False, True, 1, 2
+    assert d['a'] == 1  # попробуйте такие варианты: False, True, 1, 2
 
 
 def test_add_key_and_value_to_dictionary():
@@ -54,7 +56,7 @@ def test_add_key_and_value_to_dictionary():
     }
     d['c'] = 3
 
-    assert dict_comparator(d, _____)
+    assert dict_comparator(d, {'a': 1, 'b': 2, 'c': 3})
 
 
 def test_if_existing_key_in_dict():
@@ -67,7 +69,7 @@ def test_if_existing_key_in_dict():
     }
     var = 'a' in d
 
-    assert var == ___ # попробуйте такие варианты: False, True, 1, 2
+    assert var == True # попробуйте такие варианты: False, True, 1, 2
 
 
 def test_if_not_existing_key_in_dict():
@@ -80,7 +82,7 @@ def test_if_not_existing_key_in_dict():
     }
     var = 'c' in d
 
-    assert var == ___  # попробуйте такие варианты: False, True, 1, 2
+    assert var == False  # попробуйте такие варианты: False, True, 1, 2
 
 
 def test_get_method():
@@ -93,7 +95,7 @@ def test_get_method():
     }
     var = d.get('c', 0)
 
-    assert var == ___ # попробуйте такие варианты: False, True, 1, 2, 0
+    assert var == 0 # попробуйте такие варианты: False, True, 1, 2, 0
 
 
 def test_get_method_default_value():
@@ -106,4 +108,4 @@ def test_get_method_default_value():
     }
     var = d.get('c')
 
-    assert var == ___  # попробуйте такие варианты: False, True, 1, 2, 0, None
+    assert var == None  # попробуйте такие варианты: False, True, 1, 2, 0, None
